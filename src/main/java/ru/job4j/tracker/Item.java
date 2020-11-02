@@ -26,4 +26,13 @@ public class Item {
     public LocalDateTime getTime() {
         return created;
     }
+
+    public Item() {
+    }
+
+    public Item(int id) {
+    }
+
+    public Item(int id, String name) {
+    }
 }
