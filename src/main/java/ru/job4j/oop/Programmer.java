@@ -1,7 +1,7 @@
 package ru.job4j.oop;
 
 public class Programmer {
-    boolean code;
+    private boolean code;
 
     public boolean getCode() {
         return code;

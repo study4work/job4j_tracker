@@ -1,7 +1,7 @@
 package ru.job4j.oop;
 
 public class Builder extends Engineer {
-    boolean repair;
+    private boolean repair;
 
     public boolean getRepair() {
         return repair;

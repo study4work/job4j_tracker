@@ -1,9 +1,9 @@
 package ru.job4j.oop;
 
 public class Doctor extends Profession {
-    boolean Heal;
+    private boolean heal;
 
     public boolean getHeal () {
-        return Heal;
+        return heal;
     }
 }
