@@ -31,8 +31,11 @@ public class Item {
     }
 
     public Item(int id) {
+        id = 6;
     }
 
     public Item(int id, String name) {
+        id = 7;
+        name = "Alex";
     }
 }
