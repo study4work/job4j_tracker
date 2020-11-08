@@ -34,6 +34,15 @@ public class Item {
         id = 6;
     }
 
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", created=" + created +
+                '}';
+    }
+
     public Item(int id, String name) {
         id = 7;
         name = "Alex";
