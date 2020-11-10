@@ -31,7 +31,7 @@ public class Item {
     }
 
     public Item(int id) {
-        id = 6;
+        this.id = id;
     }
 
     @Override
@@ -44,7 +44,7 @@ public class Item {
     }
 
     public Item(int id, String name) {
-        id = 7;
-        name = "Alex";
+        this.id = id;
+        this.name = name;
     }
 }
