@@ -3,39 +3,34 @@ package ru.job4j.io;
 import java.util.Scanner;
 
 public class Matches {
-    public static void main (String[] args) {
-        Scanner input = new Scanner(System.in);
-        int matches = 11;
-        boolean run = true;
-        while (run) {
-            int player1;
-            int player2;
-            do {
-                System.out.println("Игрок 1,введите кол-во спичек от 1 до 3");
-                 player1 = Integer.valueOf(input.nextLine());
-            } while (player1 > 3 || player1 <= 0);
 
+    public static int player (String name) {
+        Scanner input = new Scanner(System.in);
+        int player;
+            do {
+                System.out.println(name + " введите кол-во спичек от 1 до 3");
+                player = Integer.valueOf(input.nextLine());
+            } while (player > 3 || player <= 0);
+            return player;
+    }
+
+    public static void main (String[] args) {
+        int matches = 11;
+        while (matches > 0) {
+            int player1 = player("Игрок 1");
                 matches -= player1;
                 System.out.println("Осталось " + matches + " спичек");
-
             if (matches == 0) {
                 System.out.println("Игрок 1 победил");
                 break;
             }
-
-            do {
-                System.out.println("Игрок 2,введите кол-во спичек от 1 до 3");
-                player2 = Integer.valueOf(input.nextLine());
-            } while (player2 > 3 || player2 <= 0);
-
+            int player2 = player("Игрок 2");
                 matches -= player2;
                 System.out.println("Осталось " + matches + " спичек");
-
             if (matches == 0) {
                 System.out.println("Игрок 2 победил");
                 break;
             }
-
         }
     }
 }
