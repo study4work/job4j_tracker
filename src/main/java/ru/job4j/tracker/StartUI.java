@@ -54,12 +54,11 @@ public class StartUI {
                 Scanner input = new Scanner(System.in);
                 String name = input.nextLine();
                 Item[] items = tracker.findByName(name);
-                for (int i = 0; i < items.length; i++) {
-                    if (items[i].getName().equals(name)) {
-                        System.out.println(items[i]);
-                    } else {
-                        System.out.println("Items doesn't find");
-                    }
+                if (items.length > 0) {
+                    for (int i = 0; i < items.length; i++) {
+                    System.out.println(items[i]); }
+                } else {
+                    System.out.println("Items doesn't find");
                 }
             } else if (select == 6) {
                 run = false;
