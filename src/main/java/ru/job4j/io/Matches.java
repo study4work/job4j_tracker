@@ -14,23 +14,29 @@ public class Matches {
             return player;
     }
 
+    public static int count (String name, int matches) {
+        matches = matches - player(name);
+        System.out.println("Осталось " + matches + " спичек");
+        return matches;
+    }
+
     public static void main (String[] args) {
         int matches = 11;
+        String player1 = "Игрок 1";
+        String player2 = "Игрок 2";
+        String winner = "";
         while (matches > 0) {
-            int player1 = player("Игрок 1");
-                matches -= player1;
-                System.out.println("Осталось " + matches + " спичек");
+            matches = count(player1, matches);
             if (matches == 0) {
-                System.out.println("Игрок 1 победил");
+                winner = player1;
                 break;
             }
-            int player2 = player("Игрок 2");
-                matches -= player2;
-                System.out.println("Осталось " + matches + " спичек");
+            matches = count(player2, matches);
             if (matches == 0) {
-                System.out.println("Игрок 2 победил");
+                winner = player2;
                 break;
             }
         }
+        System.out.println("Победитель " + winner);
     }
 }
