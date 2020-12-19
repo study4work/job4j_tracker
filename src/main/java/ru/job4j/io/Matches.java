@@ -15,8 +15,8 @@ public class Matches {
     }
 
     public static int count (String name, int matches) {
-        matches = matches - player(name);
-        System.out.println("Осталось " + matches + " спичек");
+            matches = matches - player(name);
+            System.out.println("Осталось " + matches + " спичек");
         return matches;
     }
 
@@ -24,19 +24,18 @@ public class Matches {
         int matches = 11;
         String player1 = "Игрок 1";
         String player2 = "Игрок 2";
-        String winner = "";
+        String player = "";
+        boolean winner = false;
         while (matches > 0) {
-            matches = count(player1, matches);
-            if (matches == 0) {
-                winner = player1;
-                break;
+            winner = !winner;
+            if (winner) {
+                player = player1;
+                matches = count(player, matches);
+            } else {
+                player = player2;
+                matches = count(player,matches);
             }
-            matches = count(player2, matches);
-            if (matches == 0) {
-                winner = player2;
-                break;
-            }
-        }
-        System.out.println("Победитель " + winner);
+    }
+        System.out.println("Победитель " + player);
     }
 }
