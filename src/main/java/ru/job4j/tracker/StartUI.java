@@ -3,6 +3,11 @@ package ru.job4j.tracker;
 import java.time.format.DateTimeFormatter;
 
 public class StartUI {
+    private final Output out;
+
+    public StartUI(Output out) {
+        this.out = out;
+    }
 
     public void init(Input input, Tracker tracker, UserAction[] actions) {
         boolean run = true;
@@ -15,9 +20,9 @@ public class StartUI {
     }
 
     private void showMenu(UserAction[] actions) {
-        System.out.println("Menu.");
+        out.println("Menu.");
         for (int index = 0; index < actions.length; index++) {
-            System.out.println(index + ". " + actions[index].name());
+            out.println(index + ". " + actions[index].name());
         }
     }
 
@@ -36,19 +41,19 @@ public class StartUI {
         Item rsl = tracker.findById(1);
         System.out.println(rsl);*/
 
-
+        Output output = new ConsoleOutput();
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
         UserAction[] actions = {
-                new CreateAction(),
-                new FindAction(),
-                new FindByIdAction(),
-                new FindByNameAction(),
-                new ReplaceAction(),
-                new DeleteAction(),
-                new ExitAction()
+                new CreateAction(output),
+                new FindAction(output),
+                new FindByIdAction(output),
+                new FindByNameAction(output),
+                new ReplaceAction(output),
+                new DeleteAction(output),
+                new ExitAction(output)
         };
-        new StartUI().init(input, tracker, actions);
+        new StartUI(output).init(input, tracker, actions);
     }
 
 
