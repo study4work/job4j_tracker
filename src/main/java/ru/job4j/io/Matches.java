@@ -22,18 +22,11 @@ public class Matches {
 
     public static void main (String[] args) {
         int matches = 11;
-        String player1 = "Игрок 1";
-        String player2 = "Игрок 2";
-        String player = "";
         boolean flag = false;
+        String player = "";
         while (matches > 0) {
             flag = !flag;
-            if (flag) {
-                player = player1;
-            } else {
-                player = player2;
-            }
-            matches = count(player,matches);
+            matches = flag ? count("Игрок 1", matches) : count("Игрок 2", matches);
         }
         System.out.println("Победитель " + player);
     }
