@@ -23,9 +23,9 @@ public class Item {
         this.name = name;
     }
 
-    public LocalDateTime getTime() {
+   /* public LocalDateTime getTime() {
         return created;
-    }
+    } */
 
     public Item() {
     }
@@ -39,7 +39,6 @@ public class Item {
         return "Item{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", created=" + created +
                 '}';
     }
 
