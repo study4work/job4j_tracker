@@ -24,9 +24,12 @@ public class Matches {
         int matches = 11;
         boolean flag = false;
         String player = "";
+        String player1 = "Игрок 1";
+        String player2 = "Игрок 2";
         while (matches > 0) {
             flag = !flag;
-            matches = flag ? count("Игрок 1", matches) : count("Игрок 2", matches);
+            player = flag ? player1 : player2;
+            matches = count(player, matches);
         }
         System.out.println("Победитель " + player);
     }
