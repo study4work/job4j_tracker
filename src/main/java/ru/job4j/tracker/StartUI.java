@@ -47,7 +47,7 @@ public class StartUI {
 
         Output output = new ConsoleOutput();
         Input input = new ValidateInput(output, new ConsoleInput());
-        Tracker tracker = new Tracker();
+        Tracker tracker = Tracker.getExcess();
         UserAction[] actions = {
                 new CreateAction(output),
                 new FindAction(output),
