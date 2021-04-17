@@ -4,16 +4,16 @@ import java.util.HashSet;
 
 public class UniqueText {
     public static boolean isEquals(String originText, String duplicateText) {
-        boolean rsl = false;
+        boolean rsl = true;
         String[] origin = originText.split(" ");
         String[] text = duplicateText.split(" ");
         HashSet<String> check = new HashSet<>();
         for (String originString : origin) {
             check.add(originString);
-            for (String textString : text) {
-                if(check.contains(textString)) {
-                    rsl = true;
-                }
+            }
+        for (String textString : text) {
+            rsl = check.contains(textString);
+            if(rsl == false){
                 break;
             }
         }
