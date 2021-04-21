@@ -12,8 +12,8 @@ public class UniqueText {
             check.add(originString);
             }
         for (String textString : text) {
-            rsl = check.contains(textString);
-            if(rsl == false){
+            if (!check.contains(textString)){
+                rsl = false;
                 break;
             }
         }
