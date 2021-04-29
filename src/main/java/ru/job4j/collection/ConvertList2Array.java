@@ -10,7 +10,7 @@ public class ConvertList2Array {
         for (Integer num : list) {
             array[row][cell++] = num;
             if (cell == cells) {
-                row ++;
+                row++;
                 cell = 0;
             }
         }

@@ -5,6 +5,6 @@ public interface Transport {
 
     public void passengers(int passengers);
 
-    public int price (int cost);
+    public int price(int cost);
 
 }

@@ -9,7 +9,10 @@ public class College {
         student.setGroupName("33g");
         student.setAdmission(new Date());
 
-        System.out.println("Student " + student.getName() + " has admission in class " + student.getGroupName()
+        System.out.println("Student "
+                + student.getName()
+                + " has admission in class "
+                + student.getGroupName()
                 + " on " + student.getAdmission());
     }
 }

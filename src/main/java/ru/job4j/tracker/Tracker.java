@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class Tracker {
+    private static Tracker excess = null;
+
     private final List<Item> items = new ArrayList<>();
     private int ids = 1;
-
-    private static Tracker excess = null;
 
     public static Tracker getExcess() {
         if (excess == null) {
@@ -17,15 +17,15 @@ public final class Tracker {
     }
 
     public Item add(Item item) {
-        item.setId(ids ++);
+        item.setId(ids++);
         items.add(item);
         return item;
     }
 
     private int indexOf(int id) {
         int rsl = -1;
-        for(int i = 0; i < items.size(); i++) {
-            if(items.get(i).getId() == id) {
+        for (int i = 0; i < items.size(); i++) {
+            if (items.get(i).getId() == id) {
                 rsl = i;
                 break;
             }
@@ -38,14 +38,14 @@ public final class Tracker {
           return index != -1 ? items.get(index) : null;
       }
 
-    public List<Item> findAll(){
+    public List<Item> findAll() {
         return List.copyOf(items);
     }
 
-      public List<Item> findByName(String key){
+      public List<Item> findByName(String key) {
         List<Item> item = new ArrayList<>();
-        for(Item item1 : items) {
-            if(item1.getName().equals(key)) {
+        for (Item item1 : items) {
+            if (item1.getName().equals(key)) {
                 item.add(item1);
             }
         }

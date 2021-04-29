@@ -10,13 +10,14 @@ public class StartUI {
     public StartUI(Output out) {
         this.out = out;
     }
+
     public void init(Input input, Tracker tracker, List<UserAction> actions) {
         boolean run = true;
         while (run) {
             this.showMenu(actions);
             int select = input.askInt("Select: ");
             if (select < 0 || select >= actions.size()) {
-                out.println("Wrong input, you can select: 0 .. " );
+                out.println("Wrong input, you can select: 0 .. ");
                 continue;
             }
             UserAction action = actions.get(select);
@@ -45,7 +46,6 @@ public class StartUI {
     }
 
     public static void main(String[] args) {
-
         /*Item item = new Item();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         String currentDateTimeFormat = item.getTime().format(formatter);
@@ -63,8 +63,8 @@ public class StartUI {
         Input input = new ValidateInput(output, new ConsoleInput());
         Tracker tracker = Tracker.getExcess();
         List<UserAction> actions = new ArrayList<>();
-        actions.add( new CreateAction(output));
-        actions.add( new FindAction(output));
+        actions.add(new CreateAction(output));
+        actions.add(new FindAction(output));
         actions.add(new FindByIdAction(output));
         actions.add(new FindByNameAction(output));
         actions.add(new ReplaceAction(output));
@@ -86,6 +86,4 @@ public class StartUI {
 //        };
 //        new StartUI(output).init(input, tracker, actions);
 //    }
-
-
 }

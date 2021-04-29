@@ -7,6 +7,18 @@ public class Item {
     private String name;
     private LocalDateTime created = LocalDateTime.now();
 
+    public Item(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public Item(String name) {
+        this.name = name;
+    }
+
+    public Item() {
+    }
+
     public int getId() {
         return id;
     }
@@ -27,23 +39,11 @@ public class Item {
         return created;
     } */
 
-    public Item() {
-    }
-
-    public Item(String name) {
-        this.name = name;
-    }
-
     @Override
     public String toString() {
-        return "Item{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
-    }
-
-    public Item(int id, String name) {
-        this.id = id;
-        this.name = name;
+        return "Item{"
+                + "id=" + id
+                + ", name='" + name + '\''
+                + '}';
     }
 }

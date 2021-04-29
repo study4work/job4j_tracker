@@ -17,18 +17,18 @@ public class CompareByIdTest {
     @Test
     public void byAscending() {
         List<Item> list = Arrays.asList(
-                new Item(2,"Petr"),
-                new Item(3,"Ivan"),
-                new Item(4,"Alex"),
-                new Item(1,"Petr")
+                new Item(2, "Petr"),
+                new Item(3, "Ivan"),
+                new Item(4, "Alex"),
+                new Item(1, "Petr")
                 );
 
-        Collections.sort(list,new CompareByIdAscending());
+        Collections.sort(list,  new CompareByIdAscending());
         List<Item> expect = Arrays.asList(
-                new Item(1,"Petr"),
-                new Item(2,"Petr"),
-                new Item(3,"Ivan"),
-                new Item(4,"Alex")
+                new Item(1, "Petr"),
+                new Item(2, "Petr"),
+                new Item(3, "Ivan"),
+                new Item(4, "Alex")
         );
         assertThat(list.get(0).getId(), is(expect.get(0).getId()));
     }
@@ -36,18 +36,18 @@ public class CompareByIdTest {
     @Test
     public void byDescending() {
         List<Item> list = Arrays.asList(
-                new Item(2,"Petr"),
-                new Item(3,"Ivan"),
-                new Item(4,"Alex"),
-                new Item(1,"Petr")
+                new Item(2, "Petr"),
+                new Item(3, "Ivan"),
+                new Item(4, "Alex"),
+                new Item(1, "Petr")
         );
 
-        Collections.sort(list,new CompareByIdDescending());
+        Collections.sort(list, new CompareByIdDescending());
         List<Item> expect = Arrays.asList(
-                new Item(4,"Alex"),
-                new Item(3,"Ivan"),
-                new Item(2,"Petr"),
-                new Item(1,"Petr")
+                new Item(4, "Alex"),
+                new Item(3, "Ivan"),
+                new Item(2, "Petr"),
+                new Item(1, "Petr")
         );
         assertThat(list.get(0).getId(), is(expect.get(0).getId()));
     }

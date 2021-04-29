@@ -88,8 +88,8 @@ public class StartUITest {
                 actions.add(new ExitAction(out));
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
-                "Menu." + System.lineSeparator() +
-                        "0. == Exit ==" + System.lineSeparator()
+                "Menu." + System.lineSeparator()
+                        + "0. == Exit ==" + System.lineSeparator()
         ));
     }
 
@@ -111,19 +111,19 @@ public class StartUITest {
                actions.add(new FindByIdAction(out));
                actions.add(new ExitAction(out));
         new StartUI(out).init(in, tracker, actions);
-        assertThat(out.toString(), is("Menu." + System.lineSeparator() +
-                "0. === Create a new Item ====" + System.lineSeparator() +
-                "1. == Find by Id ==" + System.lineSeparator() +
-                "2. == Exit ==" + System.lineSeparator() +
-                "Menu." + System.lineSeparator() +
-                "0. === Create a new Item ====" + System.lineSeparator() +
-                "1. == Find by Id ==" + System.lineSeparator() +
-                "2. == Exit ==" + System.lineSeparator() +
-                "Item{id=1, name='Item'}" + System.lineSeparator() +
-                "Menu." + System.lineSeparator() +
-                "0. === Create a new Item ====" + System.lineSeparator() +
-                "1. == Find by Id ==" + System.lineSeparator() +
-                "2. == Exit ==" + System.lineSeparator()
+        assertThat(out.toString(), is("Menu." + System.lineSeparator()
+                        + "0. === Create a new Item ====" + System.lineSeparator()
+                        + "1. == Find by Id ==" + System.lineSeparator()
+                        + "2. == Exit ==" + System.lineSeparator()
+                        + "Menu." + System.lineSeparator()
+                        + "0. === Create a new Item ====" + System.lineSeparator()
+                        + "1. == Find by Id ==" + System.lineSeparator()
+                        + "2. == Exit ==" + System.lineSeparator()
+                        + "Item{id=1, name='Item'}" + System.lineSeparator()
+                        + "Menu." + System.lineSeparator()
+                        + "0. === Create a new Item ====" + System.lineSeparator()
+                        + "1. == Find by Id ==" + System.lineSeparator()
+                        + "2. == Exit ==" + System.lineSeparator()
                 ));
     }
 
@@ -145,19 +145,19 @@ public class StartUITest {
                 actions.add(new FindByNameAction(out));
                 actions.add(new ExitAction(out));
         new StartUI(out).init(in, tracker, actions);
-        assertThat(out.toString(), is("Menu." + System.lineSeparator() +
-                "0. === Create a new Item ====" + System.lineSeparator() +
-                "1. == Find by Name ==" + System.lineSeparator() +
-                "2. == Exit ==" + System.lineSeparator() +
-                "Menu." + System.lineSeparator() +
-                "0. === Create a new Item ====" + System.lineSeparator() +
-                "1. == Find by Name ==" + System.lineSeparator() +
-                "2. == Exit ==" + System.lineSeparator() +
-                "Item{id=1, name='Item'}" + System.lineSeparator() +
-                "Menu." + System.lineSeparator() +
-                "0. === Create a new Item ====" + System.lineSeparator() +
-                "1. == Find by Name ==" + System.lineSeparator() +
-                "2. == Exit ==" + System.lineSeparator()));
+        assertThat(out.toString(), is("Menu." + System.lineSeparator()
+                + "0. === Create a new Item ====" + System.lineSeparator()
+                + "1. == Find by Name ==" + System.lineSeparator()
+                + "2. == Exit ==" + System.lineSeparator()
+                + "Menu." + System.lineSeparator()
+                + "0. === Create a new Item ====" + System.lineSeparator()
+                + "1. == Find by Name ==" + System.lineSeparator()
+                + "2. == Exit ==" + System.lineSeparator()
+                + "Item{id=1, name='Item'}" + System.lineSeparator()
+                + "Menu." + System.lineSeparator()
+                + "0. === Create a new Item ====" + System.lineSeparator()
+                + "1. == Find by Name ==" + System.lineSeparator()
+                + "2. == Exit ==" + System.lineSeparator()));
     }
 
     @Test
@@ -175,13 +175,13 @@ public class StartUITest {
                 actions.add(new ExitAction(out));
         Item item = tracker.add(new Item("Item"));
         new StartUI(out).init(in, tracker, actions);
-        assertThat(out.toString(), is("Menu." + System.lineSeparator() +
-                "0. === Find all items ===" + System.lineSeparator() +
-                "1. == Exit ==" + System.lineSeparator() +
-                "Item{id=1, name='Item'}" + System.lineSeparator() +
-                "Menu." + System.lineSeparator() +
-                "0. === Find all items ===" + System.lineSeparator() +
-                "1. == Exit ==" + System.lineSeparator()
+        assertThat(out.toString(), is("Menu." + System.lineSeparator()
+                        + "0. === Find all items ===" + System.lineSeparator()
+                        + "1. == Exit ==" + System.lineSeparator()
+                        + "Item{id=1, name='Item'}" + System.lineSeparator()
+                        + "Menu." + System.lineSeparator()
+                        + "0. === Find all items ===" + System.lineSeparator()
+                        + "1. == Exit ==" + System.lineSeparator()
                 ));
     }
 

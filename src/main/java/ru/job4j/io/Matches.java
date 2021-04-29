@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Matches {
 
-    public static int player (String name) {
+    public static int player(String name) {
         Scanner input = new Scanner(System.in);
         int player;
         do {
@@ -14,13 +14,13 @@ public class Matches {
         return player;
     }
 
-    public static int count (String name, int matches) {
+    public static int count(String name, int matches) {
             matches = matches - player(name);
             System.out.println("Осталось " + matches + " спичек");
         return matches;
     }
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         int matches = 11;
         boolean flag = false;
         String player = "";
