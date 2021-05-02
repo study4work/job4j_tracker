@@ -20,4 +20,7 @@ notifications:
       - FaJlJleN@ya.ru
     on_success: never # default: change
     on_failure: always # default: always
+    env:
+      global:
+      CODECOV_TOKEN="a2f4a061-3ceb-4911-a310-98cc04c08b8f"
 
