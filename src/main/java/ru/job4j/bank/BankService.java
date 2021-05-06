@@ -18,7 +18,7 @@ public class BankService {
 
     /**
      * Метод добавляет нового юзера в мапу,если такового еще нет.
-     * @param user
+     * @param user юзер.
      */
     public void addUser(User user) {
         users.putIfAbsent(user, new ArrayList<Account>());
@@ -52,7 +52,7 @@ public class BankService {
     }
 
     /**
-     * Метод ищет аккаунт в значении List<Account> HashMap по реквизитам аккаунта.
+     * Метод ищет аккаунт в значении листа аккантов в хашмапе по реквизитам аккаунта.
      * @param passport по которому нужно найти User.
      * @param requisite по которым нам нужно найти Account.
      * @return искомы Account из списка аккаунтов.

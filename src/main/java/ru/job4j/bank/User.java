@@ -14,8 +14,8 @@ public class User {
 
     /**
      * Конструктор для создания класса.
-     * @param passport
-     * @param username
+     * @param passport пасспорт.
+     * @param username имя пользователя.
      */
     public User(String passport, String username) {
         this.passport = passport;
