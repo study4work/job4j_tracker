@@ -7,9 +7,6 @@ public class Article {
      * @param origin текст на вход
      * @param line   текст для проверки
      * @return true в случае,если line составлен из оригинального текста
-     * добавляем в коллекцию элементы двух строк,результат основан на работе метода add,который
-         * возвращает false в случае если елемент уже присутствует в коллекции.
-         * В конце меняем местами результат работы метода.
      */
     public static boolean generateBy(String origin, String line) {
         boolean result = true;
@@ -18,19 +15,15 @@ public class Article {
         String[] org = origin.split(" ");
         String[] ln = line.split(" ");
 
-        for (int i = 0; i < org.length; i++) {
-            compare.add(org[i]);
+        for (String originalString : org) {
+            compare.add(originalString);
         }
-
-        for (int i = 0; i < ln.length; i++) {
-            result = compare.add(ln[i]);
-            if (result) {
+        for (String lineString : ln) {
+            if (!compare.contains(lineString)) {
+                result = false;
                 break;
             }
         }
-       result = result == false ? true : false;
         return result;
-
     }
-
 }
