@@ -11,13 +11,12 @@ public class ProfilesTest {
     @Test
     public void whenProfilesStramToAdress() {
         Profiles pr = new Profiles();
-        Address adress = new Address("Moscow","Main",42,24);
+        Address adress = new Address("Moscow", "Main", 42, 24);
         Profile profile = new Profile(adress);
         List<Profile> profiles = List.of(profile);
         List<Address> expected = List.of(adress);
         List<Address> rsl = pr.collect(profiles);
         assertThat(rsl, is(expected));
-
 
     }
 
