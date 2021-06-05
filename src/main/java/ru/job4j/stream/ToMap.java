@@ -6,10 +6,12 @@ import java.util.stream.Collectors;
 
 public class ToMap {
     public Map<String, Student> map (List<Student> list) {
-        return list.stream().distinct().collect(
+        return list.stream().collect(
                 Collectors.toMap(
                         Student::getSurname,
-                        student -> student
+                        student -> student,
+                                (s, i) -> {System.out.println("Duplicate");
+                                return s;}
                 ));
     }
 }
