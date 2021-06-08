@@ -17,7 +17,10 @@ public class ToMapTest {
         Student student2 = new Student(13, "Sozonov");
         List<Student> list = List.of(student, student1, student2);
         Map<String, Student> rsl = map.map(list);
-        Map<String, Student> expected = Map.of(student.getSurname(), student, student2.getSurname(), student2);
+        Map<String, Student> expected = Map.of(student.getSurname(),
+                                               student,
+                                               student2.getSurname(),
+                                               student2);
         assertThat(rsl, is(expected));
     }
 }

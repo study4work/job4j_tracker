@@ -5,13 +5,12 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class ToMap {
-    public Map<String, Student> map (List<Student> list) {
+    public Map<String, Student> map(List<Student> list) {
         return list.stream().collect(
                 Collectors.toMap(
                         Student::getSurname,
                         student -> student,
-                                (s, i) -> {System.out.println("Duplicate");
-                                return s;}
+                                (s, i) -> s
                 ));
     }
 }
