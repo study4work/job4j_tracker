@@ -13,13 +13,13 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car{" +
-                "brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
-                ", wheels=" + wheels +
-                ", doors=" + doors +
-                ", isEngine=" + isEngine +
-                '}';
+        return "Car{"
+                + "brand='" + brand + '\''
+                + ", model='" + model + '\''
+                + ", wheels=" + wheels
+                + ", doors=" + doors
+                + ", isEngine=" + isEngine
+                + '}';
     }
 
     static class Builder {
