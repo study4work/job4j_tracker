@@ -1,9 +1,6 @@
 package ru.job4j.bank;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Класс осуществляет минимальный набор функций для банковского сервиса.
@@ -31,9 +28,9 @@ public class BankService {
      * @param account который нужно добавить к user.
      */
     public void addAccount(String passport, Account account) {
-        User user = findByPassport(passport);
-        if (user != null && !users.get(user).contains(account)) {
-            users.get(user).add(account);
+        Optional<User> user = findByPassport(passport);
+        if (user.isPresent() && !users.get(user.get()).contains(account)) {
+            users.get(user.get()).add(account);
         }
     }
 
@@ -42,12 +39,17 @@ public class BankService {
      * @param passport user которого нужно найти.
      * @return возвращет искомого User.
      */
-    public User findByPassport(String passport) {
-        return users.keySet()
+    public Optional<User> findByPassport(String passport) {
+        Optional<User> rsl = users.keySet()
                 .stream()
                 .filter(s -> s.getPassport().equals(passport))
-                .findFirst()
-                .orElse(null);
+                .findFirst();
+       if (rsl.isPresent()) {
+           return rsl;
+        } else {
+           rsl = Optional.empty();
+        }
+       return rsl;
     }
 
     /**
@@ -57,9 +59,9 @@ public class BankService {
      * @return искомы Account из списка аккаунтов.
      */
     public Account findByRequisite(String passport, String requisite) {
-        User user = findByPassport(passport);
-        if (user != null) {
-            return users.get(user)
+        Optional<User> user = findByPassport(passport);
+        if (user.isPresent()) {
+            return users.get(user.get())
                     .stream()
                     .filter(s -> s.getRequisite().equals(requisite))
                     .findFirst()
