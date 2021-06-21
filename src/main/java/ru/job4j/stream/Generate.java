@@ -22,10 +22,10 @@ public class Generate {
 
         @Override
         public String toString() {
-            return "Card{" +
-                    "suit=" + suit +
-                    ", value=" + value +
-                    '}';
+            return "Card{"
+                    + "suit=" + suit
+                    + ", value=" + value
+                    + '}';
         }
     }
 
