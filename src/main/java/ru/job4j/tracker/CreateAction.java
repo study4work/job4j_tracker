@@ -3,6 +3,8 @@ package ru.job4j.tracker;
 public class CreateAction implements UserAction {
     private final Output out;
 
+// аи
+
     public CreateAction(Output out) {
         this.out = out;
     }
